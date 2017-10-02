@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', 'PagesController@index');
+Route::get('itinerary', 'PagesController@itinerary');
+Route::get('signup', 'PagesController@signupPage');
+Route::get('terms-conditions', 'PagesController@termConditions');
+Route::get('blogs', 'PagesController@blogs');
+Route::get('test', 'PagesController@test1');
