@@ -124,7 +124,11 @@ return [
 
     'cookie' => env(
         'SESSION_COOKIE',
+<<<<<<< HEAD
         str_slug(env('APP_NAME', 'Travel Brewery'), '_').'_session'
+=======
+        str_slug(env('APP_NAME', 'laravel'), '_').'_session'
+>>>>>>> 83550e710958b2d24d265bfd292a6f9b080fa755
     ),
 
     /*
