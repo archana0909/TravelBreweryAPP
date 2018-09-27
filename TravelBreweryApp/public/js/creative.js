@@ -181,32 +181,57 @@
   });
 
   // Submit enquiry on itinerary page
+  // $('#submit-form').click(function(e){
+  //   event.preventDefault();
+  //   if ($('#name').val().length != 0 && $('#email').val().length != 0 && $('#telephone').val().length != 0 && $('#message').val().length!=0)
+  //   {
+  //     var url= 'https://script.google.com/macros/s/AKfycbyT2Uu6ZvhV189Fqx23bRgyso2x7e3HNwWcpujNa3wToczTc73D/exec';
+  //
+  //     $.ajax({
+  //       url: url,
+  //       type: "GET",
+  //       dataType: "json",
+  //       data: $('form#query-iti').serializeArray(),
+  //       success: function(){
+  //         $('#query-iti').trigger('reset');
+  //       alert("Thank you for sign up !! \n You will shortly receive a detailed itinerary of thr trip. Cheers!!");
+  //       }
+  //     });
+  //       // ,
+  //       // error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
+  //       //   console.log(JSON.stringify(jqXHR));
+  //       //   console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+  //       // }
+  //     }
+  //   else
+  //   alert("Please review the form!!");
+  // });
+/*
   $('#submit-form').click(function(e){
-    event.preventDefault();
-    if ($('#name').val().length != 0 && $('#email').val().length != 0 && $('#telephone').val().length != 0 && $('#message').val().length!=0)
-    {
-      var url= 'https://script.google.com/macros/s/AKfycbyT2Uu6ZvhV189Fqx23bRgyso2x7e3HNwWcpujNa3wToczTc73D/exec';
+  if ($('#name').val().length != 0 && $('#email').val().length != 0 && $('#telephone').val().length != 0 && $('#message').val().length!=0)
 
+    {
+      var data = {
+        Name: $("#name").val().trim(),
+        Email: $("#email").val().trim(),
+        Phone: $("#telephone").val().trim(),
+        Query:$("#message").val().trim()
+      };
       $.ajax({
-        url: url,
-        type: "GET",
-        dataType: "json",
-        data: $('form#query-iti').serializeArray(),
+        type: "POST",
+        url: "submit-signup-form.php",
+        data: data,
         success: function(){
-          $('#query-iti').trigger('reset');
-          $('#itineraryModal').modal('show');
+          $('#query-form').trigger('reset');
+         alert("Thank you for sign up !! \n You will shortly receive a detailed itinerary of thr trip. Cheers!!");
+
         }
       });
-        // ,
-        // error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
-        //   console.log(JSON.stringify(jqXHR));
-        //   console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
-        // }
-      }
+    }
     else
     alert("Please review the form!!");
   });
-
+*/
   //Copy the tourcity detail form in itinerary.create page
 
   function clone(){

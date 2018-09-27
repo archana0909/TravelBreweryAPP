@@ -28,6 +28,6 @@ class AjaxController extends Controller
            $headers = "From:" . $from;
            $headers2 = "From:" . $to;
            mail($to,$subject,$message,$headers);
-        return redirect()->action('TourDetailsController@index');
+        //return redirect()->action('TourDetailsController@index');
     }
 }

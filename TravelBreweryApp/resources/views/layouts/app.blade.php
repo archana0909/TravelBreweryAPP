@@ -23,7 +23,7 @@
   <link href="{{ asset('vendor/owl/owl.carousel.min.css') }}" rel="stylesheet">
   <link href="{{ asset('vendor/owl/owl.theme.default.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
-  
+
   <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet" type="text/css">
@@ -150,9 +150,7 @@
       <script src="{{ asset('vendor/scrollreveal/scrollreveal.min.js')}}"></script>
       <script src="{{ asset('vendor/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
       <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
-
       <script src="{{ asset('vendor/owl/owl.carousel.min.js') }}"></script>
-
       <script src="{{ asset('js/creative.js') }}"></script>
 
       <!-- <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>

@@ -1,4 +1,3 @@
-
 <link href="https://fonts.googleapis.com/css?family=Raleway:400,600|Monoton" rel="stylesheet" type="text/css">
 @extends('layouts.app')
 @section('content')
@@ -229,9 +228,9 @@
         </div>
       </div>
     </section>
-
-    <aside class="submit-enquiry" id="enquiry-form">
+ <aside class="submit-enquiry" id="enquiry-form">
     @include('pages.submitEnquiry')
     </aside>
+
 
     @endsection
