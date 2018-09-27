@@ -15,6 +15,26 @@
     target: '.navbar-fixed-top',
     offset: 51
   });
+
+  $("#feedback-home .owl-carousel").owlCarousel({
+    items:1,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:7000,
+    autoplayHoverPause:false
+  });
+
+  $("#iti-portfolio .owl-carousel").owlCarousel({
+    items:2,
+    center:true,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:false
+  });
+
   // Closes the Responsive Menu on Menu Item Click
   $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
@@ -60,10 +80,13 @@
     //console.log($(window).scrollTop())
     if ($(window).scrollTop() > $(window).height()) {
       $('#tripdetail-navbar').addClass('navbar-fixed');
+      // $('html, body').animate({padding-top: '-=120px'}, 800);
+      $('.iti-page-view').css('padding-top',120);
       $('#enquiry-form').addClass('fixed');
 
     }
     if ($(window).scrollTop() < $(window).height()) {
+      $('.iti-page-view').css('padding-top',50);
       $('#tripdetail-navbar').removeClass('navbar-fixed');
       $('#enquiry-form').removeClass('fixed');
     }
@@ -102,7 +125,7 @@
     }
   });
   //Form Validation
-  $('#query-form').bootstrapValidator({
+  $('#query-iti').bootstrapValidator({
     trigger: 'blur',
     fields: {
       Name: {
@@ -147,114 +170,52 @@
     data.bv.destroy();
     // console.info(data.bv.getOptions());
     // initialize the plugin
-    $('#query-form').bootstrapValidator(data.bv.getOptions());
-  });
-  $('#signup-form').bootstrapValidator({
-    trigger: 'blur',
-    fields: {
-      Name: {
-        validators: {
-          notEmpty: {
-            message: 'Your  Name is required'
-          },
-          regexp: {
-            regexp: /^[a-zA-Z ]+$/,
-            message: 'Your name cannot have numbers or symbols'
-          }
-        }
-      },
-      Email: {
-        validators: {
-          notEmpty: {
-            message: 'The email is required'
-          },
-          emailAddress: {
-            message: 'The input is not a valid email address'
-          }
-        }
-      },
-      Phone: {
-        validators: {
-          notEmpty: {
-            message: 'The phone number is required'
-          },
-          regexp: {
-            regexp: /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/,
-            message: 'The input is not a valid Indian phone number'
-          }
-        }
-      }
-    }
-  })
-  .on('error.field.bv', '[name="Phone"]', function(e, data){
-    // change the data-bv-trigger value to keydown
-    //  $(e.target).attr('data-bv-trigger','keydown');
-    // destroy the plugin
-    // console.info(data.bv.getOptions());
-    data.bv.destroy();
-    // console.info(data.bv.getOptions());
-    // initialize the plugin
-    $('#signup-form').bootstrapValidator(data.bv.getOptions());
+    $('#query-iti').bootstrapValidator(data.bv.getOptions());
   });
 
-  $('#signup-form,#enquiry-form').on('status.field.bv', function(e, data) {
+  $('#query-iti').on('status.field.bv', function(e, data) {
     formIsValid = true;
     $('.form-group',$(this)).each( function() {
       formIsValid = formIsValid && $(this).hasClass('has-success');
     });
   });
-  //Reset form on closing Modal
-  $('.resetForm').click(function(){
-    $('#signup-form').trigger('reset');
-  });
 
-  $('#signup-button').click(function(e){
-    if ($('#text-name').val().length != 0 && $('#email-input').val().length != 0 && $('#tel-input').val().length != 0 &&formIsValid)
+  // Submit enquiry on itinerary page
+  $('#submit-form').click(function(e){
+    event.preventDefault();
+    if ($('#name').val().length != 0 && $('#email').val().length != 0 && $('#telephone').val().length != 0 && $('#message').val().length!=0)
     {
-      var data = {
-        Name: $("#text-name").val().trim(),
-        Email: $("#email-input").val().trim(),
-        Phone: $("#tel-input").val().trim(),
-        Query:null
-      };
+      var url= 'https://script.google.com/macros/s/AKfycbyT2Uu6ZvhV189Fqx23bRgyso2x7e3HNwWcpujNa3wToczTc73D/exec';
+
       $.ajax({
-        type: "POST",
-        url: "submit-signup-form.php",
-        data: data,
+        url: url,
+        type: "GET",
+        dataType: "json",
+        data: $('form#query-iti').serializeArray(),
         success: function(){
+          $('#query-iti').trigger('reset');
           $('#itineraryModal').modal('show');
-
-          fbq('track', 'Lead', {
-            value: 0.00,
-            currency: 'USD'
-          });
-
         }
       });
-    }
+        // ,
+        // error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
+        //   console.log(JSON.stringify(jqXHR));
+        //   console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+        // }
+      }
     else
     alert("Please review the form!!");
   });
-  $('#query-button').click(function(e){
-    if ($('#text-name').val().length != 0 && $('#email-input').val().length != 0 && $('#tel-input').val().length != 0 && $('#query-input').val().length!=0)
-    {
-      var data = {
-        Name: $("#text-name").val().trim(),
-        Email: $("#email-input").val().trim(),
-        Phone: $("#tel-input").val().trim(),
-        Query:$("#query-input").val().trim()
-      };
-      $.ajax({
-        type: "POST",
-        url: "submit-signup-form.php",
-        data: data,
-        success: function(){
-          $('#query-form').trigger('reset');
 
-        }
-      });
-    }
-    else
-    alert("Please review the form!!");
-  });
+  //Copy the tourcity detail form in itinerary.create page
+
+  function clone(){
+      $(".iti-parent").children(".sub-iti").first().clone()
+        .appendTo(".iti-parent")
+        .on('click', 'button.remove', remove);
+
+};
+
+$("#iti-clone").on("click", clone);
+
 })(jQuery); // End of use strict

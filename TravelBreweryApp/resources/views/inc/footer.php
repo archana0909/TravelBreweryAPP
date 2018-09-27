@@ -5,7 +5,7 @@
         <div>
           <h3><span>TRAVEL&nbsp;</span><span class="footer-logo">BREWERY</span></h3>
         </div>
-        <div class="contactnumber">+91-7016768700</div>
+        <div class="contactnumber">+91-8238566835</div>
 
         <ul class="social list-inline">
           <li class="list-inline-item">
@@ -31,7 +31,6 @@
         <ul class="list_style">
           <li class="nav-head">Tours And Blogs</li>
           <li><a href="http://travelbrewery.com/index.php#iti-portfolio" target="_blank">Our Top Tours</a></li>
-          <li><a href="http://travelbrewery.com/backpack-eastern-europe.php" target="_blank">East European Sujourn</a></li>
           <li><a href="http://travelbrewery.com/Blog" target="_blank">Blogs</a></li>
         </ul>
       </div>
@@ -39,7 +38,7 @@
         <ul class="list_style">
           <li class="nav-head">Support</li>
           <li><a href="http://travelbrewery.com/index.php#contact" target="_blank">Contact</a></li>
-          <li><a href="http://travelbrewery.com/terms-conditions.php" target="_blank">Terms and Conditions</a></li>
+          <li><a href="http://travelbrewery.com/terms-conditions" target="_blank">Terms and Conditions</a></li>
         </ul>
       </div>
     </div>

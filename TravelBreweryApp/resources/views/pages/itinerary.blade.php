@@ -298,4 +298,4 @@ $tourDesc="Explore the scenic beauty &amp; lip smacking food of Italy during the
       <aside class="submit-enquiry" id="enquiry-form">
         <?php include 'submit-enquiry.php'; ?>
       </aside>
-@endsection
+      @endsection

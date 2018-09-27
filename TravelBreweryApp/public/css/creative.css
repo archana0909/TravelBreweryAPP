@@ -162,7 +162,7 @@ header {
   text-align: center;
   color: white;
 }
-header .header-content {
+.header-content {
   background-color: rgba(0,0,0,0.6);
   position: relative;
   text-align: center;
@@ -170,21 +170,21 @@ header .header-content {
   width: 100%;
 }
 
-header .header-content .header-content-inner
+.header-content .header-content-inner
 {
   margin: 20px 20px;
 }
-header .header-content .header-content-inner h1 {
+.header-content .header-content-inner h1 {
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 30px;
 }
-header .header-content .header-content-inner hr {
+.header-content .header-content-inner hr {
   margin: 30px auto;
 }
-header .header-content .header-content-inner p {
+.header-content .header-content-inner p {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
   font-size: 16px;
@@ -194,7 +194,7 @@ header .header-content .header-content-inner p {
   header {
     min-height: 100%;
   }
-  header .header-content {
+  .header-content {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -202,15 +202,15 @@ header .header-content .header-content-inner p {
     transform: translateY(-50%);
     padding: 0 50px;
   }
-  header .header-content .header-content-inner {
+  .header-content .header-content-inner {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
   }
-  header .header-content .header-content-inner h1 {
+  .header-content .header-content-inner h1 {
     font-size: 50px;
   }
-  header .header-content .header-content-inner p {
+  .header-content .header-content-inner p {
     font-size: 18px;
     max-width: 80%;
     margin-left: auto;
@@ -481,9 +481,9 @@ body {
     -webkit-transition: 500ms ease-in-out all;
     transition: 500ms ease-in-out all;
     -webkit-backface-visibility: visible;
-            backface-visibility: visible;
+    backface-visibility: visible;
     -webkit-transform: none!important;
-            transform: none!important;
+    transform: none!important;
   }
 }
 .multi-item-carousel .carousel-control
@@ -494,6 +494,45 @@ body {
 .multi-item-carousel .carouse-control.left,
 .multi-item-carousel .carousel-control.right {
   background-image: none;
+}
+/*  whatsapp click to chat*/
+@media screen and (max-width: 600px)
+{
+
+  .icon-bar {
+    /* display: none; */
+    position: fixed;
+    right:10px;
+    bottom :0px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+  }
+
+  .icon-bar a:hover {
+    background-color: #000;
+  }
+  .whatsapp {
+    background: #4fce5d;
+    color: white;
+  }
+}
+
+@media screen and (min-width:601px)
+{  .icon-bar
+  {
+    display: none;
+  }
 }
 /*TODO: You may remove the styling*/
 #intro-europe
@@ -649,25 +688,6 @@ ul .inline-list-style {
   }
 }
 
-#tour-features-east-europe .offer-heading
-{
-  font-family: 'Satisfy', cursive;
-  color:#3BB5C9;
-}
-#tour-features-east-europe .img-style
-{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 350px;
-
-}
-
-#tour-features-east-europe li
-{
-  font-size: 1.2em;
-}
-
 #signup-button:disabled {
   background-color: #222222;
 }
@@ -798,10 +818,10 @@ blockquote .testimonial-footer
 }
 
 .caption-overlay-title {
-  color: #f5f056 !important;
+  color: white !important;
   background: rgba(0,0,0,0.5);
   padding: 2px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   text-align: center;
   -webkit-transform: translateY( -webkit-calc(-100% - 10px) );
   transform: translateY( calc(-100% - 10px) );
@@ -813,6 +833,14 @@ blockquote .testimonial-footer
 .caption:hover .caption-overlay-title {
   -webkit-transform: translateY(0);
   transform: translateY(0);
+}
+.caption-overlay-desc
+{
+  color:#white;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-top:20%;
 }
 
 #iti-header
@@ -885,10 +913,10 @@ blockquote .testimonial-footer
 @media (max-width:768px) {
   #iti-view .iti-navbar
   {
-      display:none;
+    display:none;
   }
 }
-#iti-view  .navbar-nav>li>a:link
+#iti-view  .navbar-nav>li>a
 {
   color:#f5f5f5;
   background-color: transparent;
@@ -915,8 +943,8 @@ blockquote .testimonial-footer
   background-color: none;
 }
 #iti-view .outline{
-border-top: 1px solid #ddd;
-padding: 10px 0px;
+  border-top: 1px solid #ddd;
+  padding: 10px 0px;
 }
 #iti-detail .inline-list-style
 {
@@ -987,10 +1015,10 @@ padding: 10px 0px;
   overflow: hidden;
 }
 .navbar-fixed {
-    top: 50px;
-    z-index: 100;
+  top: 50px;
+  z-index: 100;
   position: fixed;
-    width: 100%;
+  width: 100%;
 }
 @media (min-width:768px) {
   .submit-enquiry
@@ -1009,4 +1037,137 @@ padding: 10px 0px;
     width: 30%;
     /*height: auto;  */
   }
+}
+li.dropdown:hover ul.dropdown-menu
+{
+  display: block;
+}
+section#iti-all {
+  background-color: #f3f5f5;
+}
+@media (min-width:768px) {
+  #iti-all .iti-thumbnail {
+    width: 45%;
+
+  }
+  #iti-all .iti-thumbnail  h4{
+    font-size: 18px !important;
+  }
+
+}
+
+#iti-all .iti-thumbnail {
+  margin: 15px;
+  background-color: #fff;
+  margin-right: 15px;
+  height: 100%;
+
+}
+#iti-all .iti-thumbnail  h4{
+  font-size: 0.8em;
+}
+
+
+#iti-all.caption-media {
+  min-height: 768px;
+  height: auto;
+}
+.iti-thumbnail .iti-title a
+{
+  font-family:'Raleway';
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+}
+#iti-all .iti-like
+{
+  font-size: 1.5em;
+  color:#f3f5f5 ;
+}
+#iti-all .iti-liked
+{
+  color:#fa6a5d !important;
+}
+
+/* testimonial css*/
+
+#feedback-home
+{
+  background:url('../img/summer.jpg');
+}
+#feedback-home .container
+{
+  background: rgba(255,255,255,0.75);
+}
+.cust-img {
+  margin-left: auto;
+  margin-right: auto;
+  max-width:350px;
+
+}
+.cust-img .round-img
+{
+  height: 325px;
+  border-radius: 500px;
+}
+
+.cust-name h4
+{
+  color: #20865e;
+  font-size: 1.8em;
+
+}
+
+.feedback-text
+{
+  font-size: 1.2rem;
+  text-align: left;
+}
+#team .container .row {
+  border:1px solid lightgrey;
+  box-shadow: 3px 5px lightgrey;
+  margin-right: auto;
+  margin-left: auto;
+}
+#team .item h4
+{
+  color:#3BB5C9;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+
+}
+
+#dashboard-header
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: top;
+  background-image: url('../img/dashboard.jpg');
+  text-align: center;
+  background-size: cover;
+  color: white;
+  /* color:black; */
+}
+#dashboard-header div.container-fluid
+{
+  margin-top: 10%;
+}
+#dashboard-header .outline-row
+{
+  margin:20px;
+  padding:20px;
+  border:none;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#dashboard-header .h1
+{
+  color: #fa6a5d;
+
 }

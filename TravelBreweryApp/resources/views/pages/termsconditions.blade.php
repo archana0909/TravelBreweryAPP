@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <section id="terms-conditions-header">
   <div class="container">
     <div class="row outline-row">
@@ -15,7 +16,7 @@
   <div class="container">
     <div class="row">
       <div class="text-center">
-        <h2 class="section-heading">Terms and Conditions For Payement</h2>
+        <h2 class="section-heading">Terms and Conditions For Payment</h2>
         <hr>
       </div>
     </div>

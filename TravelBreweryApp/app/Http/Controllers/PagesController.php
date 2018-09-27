@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\TourDetail;
 
 class PagesController extends Controller
 {
   public function index(){
     //  $title = 'Welcome To Laravel!';
     //return view('pages.index', compact('title'));
-    return view('pages.index');
+    $tours =(string) TourDetail::inRandomOrder()->limit(5)->get();
+    // return $tours;
+    return view('pages.index')->with('tours',json_decode($tours,true));
+
   }
   public function test(){
     //  $title = 'Welcome To Laravel!';
@@ -38,9 +42,4 @@ class PagesController extends Controller
     return view('pages.blogs');
   }
 
-  public function test1(){
-    //  $title = 'Welcome To Laravel!';
-    //return view('pages.index', compact('title'));
-    return view('pages.test');
-  }
 }

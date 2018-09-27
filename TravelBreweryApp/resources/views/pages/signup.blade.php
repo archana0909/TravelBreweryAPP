@@ -32,7 +32,6 @@
             </div>
             <div class="text-center ">
               <button type="button" name="signup-button"  id="signup-button" class="btn btn-primary ">Unlock the Deal</button>
-
             </div>
             <br>
           </form>
@@ -113,10 +112,9 @@
           </div>
           <div class="modal-footer">
 
-            <button type="button" class="btn btn-secondary resetForm" data-dismiss="modal" >Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
 
           </div>
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
