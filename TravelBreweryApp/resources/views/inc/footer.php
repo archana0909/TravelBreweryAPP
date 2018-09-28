@@ -16,7 +16,7 @@
             <a href="https://www.instagram.com/travelbrewery/"><i class="fa fa-2x fa-instagram"></i></a>
           </li>
         </ul>
-        <p class="copyright">&copy;2017 TRAVEL BREWERY</p><p class="copyright"> All rights reserved.</p>
+        <p class="copyright">&copy;2018 TRAVEL BREWERY</p><p class="copyright"> All rights reserved.</p>
 
       </div>
       <div class="col-sm-3 column">

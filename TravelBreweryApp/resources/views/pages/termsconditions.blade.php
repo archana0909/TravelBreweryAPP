@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-
+<div id="mobile-share" style="display:none;">
+   <a href="https://wa.me/917702303908?text=I'm%20interested%20in%20your%20itinerary%20"> share on whatsapp</a>
+</div>
 <section id="terms-conditions-header">
   <div class="container">
     <div class="row outline-row">

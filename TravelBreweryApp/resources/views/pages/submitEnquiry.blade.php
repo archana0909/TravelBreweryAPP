@@ -8,8 +8,7 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <!-- <form id="query-iti"  method="POST" > -->
-        {!! Form::open(['id' => 'query-iti' , 'action' => 'AjaxController@submitEnquiryonIti', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+      <form id="query-iti"  method="POST">
         <div class="form-group ">
           <label for="example-text-input" class="col-2 col-form-label">Name <span>* </span></label>
           <div class="col-10">
@@ -32,15 +31,9 @@
             {{Form::label('message', 'Message')}}
             {{Form::text('message', '', ['class' => 'form-control', 'placeholder' => 'Type your messgage here'])}}
         </div>
-        <div class="form-group">
-
-            <label class="col-2 col-form-label" id="tripTitle">triptitle <span>* </span> <?php echo $tour['title']; ?></label>
-        
-
-        </div>
         {{Form::submit('Submit', ['class'=>'btn btn-primary','id'=>'submit-form'])}}
         <br>
-        {!! Form::close() !!}
+      </form>
 
     <!-- Itinerary Redirect Modal -->
     <!-- <div class="modal fade" id="itineraryModal" role="dialog" aria-hidden="true">

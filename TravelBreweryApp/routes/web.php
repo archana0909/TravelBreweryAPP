@@ -6,7 +6,7 @@ Route::get('signup', 'PagesController@signupPage');
 Route::get('terms-conditions', 'PagesController@termConditions');
 Route::get('blogs', 'PagesController@blogs');
 Route::resource('itinerary','TourDetailsController');
-Route::post('submitEnquiry','AjaxController@submitEnquiryonIti');
+Route::post('/submitEnquiry','AjaxController@submitEnquiryonIti');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 

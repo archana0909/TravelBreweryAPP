@@ -13,7 +13,7 @@
 </header>
 <!-- Whatapp icon chat -->
 <div class="icon-bar" >
-   <a href="https://wa.me/918238566835?text=<?php echo "Hi there! Need help with my travel plan.";?>" class="whatsapp"><i class="fa fa-2x fa-whatsapp" aria-hidden="true"></i></a>
+  <a href="https://wa.me/918238566835?text=<?php echo "Hi there! Need help with my travel plan.";?>" class="whatsapp"><i class="fa fa-2x fa-whatsapp" aria-hidden="true"></i></a>
 </div>
 <section class="bg-primary" id="about">
   <div class="container">
@@ -115,23 +115,23 @@
             <!-- <div class="carousel slide multi-item-carousel" > -->
             <div class="owl-carousel">
               <?php foreach ($tours as $tour): ?>
-              <div class="item ">
-                <a href="itinerary/{{$tour['id']}}">
-                  <article class="caption">
-                    <img class="caption-media" src="{{$tour['headerImg']}}"
-                    alt="{{$tour['title']}}">
-                    <div class="caption-overlay">
-                      <h4 class="caption-overlay-title">{{$tour['title']}}</h4>
-                      <p class="caption-overlay-desc">
+                <div class="item ">
+                  <a href="itinerary/{{$tour['id']}}">
+                    <article class="caption">
+                      <img class="caption-media" src="{{$tour['headerImg']}}"
+                      alt="{{$tour['title']}}">
+                      <div class="caption-overlay">
+                        <h4 class="caption-overlay-title">{{$tour['title']}}</h4>
+                        <p class="caption-overlay-desc">
 
-                        <strong >{{$tour['tripDuration']}} Tour  </strong>&nbsp;| &nbsp;<strong>Starting @ Rs {{$tour['price']}} only!</strong>
-                        <!-- 11 Days/10 Nights Tour in East Europe for Rs 59,999 only! -->
-                      </p>
-                    </div>
-                  </article>
-                </a>
-              </div>
-            <?php endforeach; ?>
+                          <strong >{{$tour['tripDuration']}} Tour  </strong>&nbsp;| &nbsp;<strong>Starting @ Rs {{$tour['price']}} only!</strong>
+                          <!-- 11 Days/10 Nights Tour in East Europe for Rs 59,999 only! -->
+                        </p>
+                      </div>
+                    </article>
+                  </a>
+                </div>
+              <?php endforeach; ?>
 
             </div>
           </div>

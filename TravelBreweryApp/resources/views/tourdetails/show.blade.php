@@ -3,7 +3,7 @@
 @section('content')
 <!-- Whatapp icon chat -->
 <div class="icon-bar" >
-   <a href="https://wa.me/918238566835?text=<?php echo "I'm interested in ".$tour['title']." \n \n Share more details please.";?>" class="whatsapp"><i class="fa fa-2x fa-whatsapp" aria-hidden="true"></i></a>
+  <a href="https://wa.me/918238566835?text=<?php echo "I'm interested in ".$tour['title']." \n \n Share more details please.";?>" class="whatsapp"><i class="fa fa-2x fa-whatsapp" aria-hidden="true"></i></a>
 </div>
 <!-- Section for header -->
 <section id="iti-header" style="background-image:url({{$tour['headerImg']}})">
@@ -11,7 +11,7 @@
     <h1 id="iti-title"class="section-heading">{{$tour['title']}}</h1>
     <div class="section-desc">
       <h3 >{{$tour['tripDuration']}}</h3>
-      <p class="price">price per adult &nbsp;<strong style="color:#ffd700;"><i class="fa fa-inr"></i> <?php echo money_format('%!i',$tour['price']) ?> + 5 % GST</strong></p>
+      <p class="price">price per adult &nbsp;<strong style="color:#ffd700;"><i class="fa fa-inr"></i> <?php echo money_format('%!i',$tour['price']) ?> + 5 % GST **</strong></p>
     </div>
     <h3 style="color:#ffd700;"><i class="fa fa-hashtag"></i>{{$tour['title']}}</h3>
 
@@ -35,6 +35,9 @@
           </div>
           <div class="tour-overview col-sm-6">
             <p class="text"><i class="fa fa-2x  fa-plane fa-flip-horizontal" aria-hidden="true"></i>&nbsp;&nbsp;<strong>Return From&nbsp; :&nbsp;</strong>{{$tour['returnCountry']}}</p>
+          </div>
+          <div class="col-sm-8">
+            <strong>** {{$tour['Imp_info']}}</strong>
           </div>
         </div>
       </div>
@@ -120,7 +123,7 @@
         <!--Itinerary details-->
         <div class="iti-page-view row outline" id="iti-itinerary" >
           <h3>
-          <i class="fa fa-list" aria-hidden="true"></i>
+            <i class="fa fa-list" aria-hidden="true"></i>
             Itinerary
           </h3>
 
@@ -228,9 +231,10 @@
         </div>
       </div>
     </section>
- <aside class="submit-enquiry" id="enquiry-form">
-    @include('pages.submitEnquiry')
+    <aside class="submit-enquiry" id="enquiry-form">
+      @include('pages.submitEnquiry')
     </aside>
 
 
     @endsection
+    
